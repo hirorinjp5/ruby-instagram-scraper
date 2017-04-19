@@ -42,7 +42,7 @@ module RubyInstagramScraper
     url = "#{BASE_URL}/p/#{ code }/?__a=1"
     params = ""
 
-    JSON.parse( open( "#{url}#{params}" ).read )["media"]
+    JSON.parse( open( "#{url}#{params}" ).read )
   end
 
   def self.get_media_comments ( shortcode, count = 40, before = nil )
@@ -52,7 +52,7 @@ module RubyInstagramScraper
       follows{count},followed_by{count},biography,full_name,media{count},\
       is_private,external_url,is_verified}},page_info}}"
 
-    JSON.parse( open( url ).read )["comments"]
+    JSON.parse( open( url ).read )
   end
   
 end
